@@ -1,0 +1,312 @@
+/* start body */
+    body {
+        font-family: "Jost", serif;
+    }
+/* end body  */
+
+/* start special heading */
+    .special-heading {
+        padding: 20px 0;
+    }
+
+    @media (min-width: 768px) {
+        .special-heading h1 {
+            font-size: 90px;
+            opacity: 0.4;
+            color: #2441c2;
+            font-weight: 900;
+        }
+
+        .special-heading p {
+            margin-top: -40px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .special-heading h1 {
+            font-size: 80px;
+            opacity: 0.4;
+            color: #2441c2;
+            font-weight: 900;
+        }
+
+        .special-heading p {
+            margin-top: -40px;
+        }
+    }
+
+    @media (max-width: 567px) {
+        .special-heading h1 {
+            font-size: 50px;
+            opacity: 0.4;
+            color: #2441c2;
+            font-weight: 900;
+        }
+
+        .special-heading p {
+            margin-top: -35px;
+        }
+    }
+/* end special heading */
+
+/* start navbar */
+    .nav-item a {
+        transition: all 0.2s ease-in-out;
+        padding: 5px 8px;
+        border-radius: 7px;
+    }
+
+    .nav-item a:hover {
+        background-color: #2441c2;
+        color: white; 
+        font-size: 18px;
+        padding: 6px 12px; 
+        border-radius: 10px;
+        box-shadow: 0px 4px 5px rgba(36, 65, 194, 0.4); 
+        transform: scale(0.8); 
+    }
+/* end navbar */
+
+/* start landing */
+    .landing {
+        background-image: url("images/computer.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+
+    @media (min-width: 768px) and (max-width: 1200px) { /* Medium & large screens */
+        .landing-text h1 {
+            font-size: 40px !important;
+        }
+
+        .landing-text p {
+            font-size: 20px !important;
+        }
+    }     
+
+    @media (max-width: 567px) { /* Small screens */
+        .landing-text h1 {
+            font-size: 20px !important;
+        }
+
+        .landing-text p {
+            font-size: 16px !important;
+        }
+    } 
+
+    .landing-text h1 {
+        animation: fadeSlide 1s ease-out;
+    }
+
+    .landing-text p {
+        font-size: 16px;
+        font-weight: bold;
+        font-family: monospace;
+        width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 2s steps(15) forwards, blink 0.5s infinite alternate;
+    }
+
+    .btn:hover {
+        animation: bounce 0.6s ease-in-out;
+    }
+
+    @keyframes fadeSlide {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes bounce {
+        0% { transform: translateY(0); }
+        30% { transform: translateY(-10px); }
+        50% { transform: translateY(0); }
+        70% { transform: translateY(-5px); }
+        100% { transform: translateY(0); }
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 300px; }    
+    }
+
+    @keyframes blink {
+        50% { border-color: transparent; }
+    }
+/* end landing */
+
+/* start about */
+    .about-text h1 {
+        border-bottom: 3px solid #ddd;
+        width: 250px;
+    }
+
+    .about-text p {
+        line-height: 2;
+    }
+
+    .about-image img {
+        animation: fadeSlide 1s ease-in-out;
+    }
+
+    @media (max-width: 567px) {
+        .about-image img {
+            height: 300px;
+            width: 250px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .about-image img {
+            height: 300px;
+            width: 250px;
+        }
+    }
+
+    @media (min-width: 967px) {
+        .about-text h1 {
+            font-size: 35px;
+        }
+
+        .about-text p {
+            font-size: 18px;
+        }
+    }
+
+    @keyframes fadeSlide {
+        0% {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+/* end about */
+
+/* start services */    
+    .service-icon {
+        color: #2441c2;
+    }
+
+    .services .service {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+
+    .services .service .service-detail {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .services .service-icon {
+        flex-shrink: 0;
+    }  
+
+    .service {
+        transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service:hover {
+        background-color: #2441c2;
+        transform: translateY(-1px) rotate(-3deg) scale(0.9);
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .service:hover .service-icon {
+        color: white;
+        transition: color 0.3s ease; 
+    }
+
+    .service:hover .service-detail h3 {
+        color: white;
+        transition: color 0.3s ease;
+    }    
+
+    .service:hover .service-detail p {
+        color: white;
+        transition: color 0.3s ease;
+    }    
+/* end services */
+
+/* start skills */ 
+    .skill-image img {
+        height: 100px;
+    }
+
+    .skill-card{
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-card:hover {
+        background-color: rgba(36, 65, 194, 0.4);
+        transform: translateY(-5px);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        border-left: 2px solid rgba(36, 65, 194, 0.4);
+    }
+/* end skills */
+
+/* start projects */
+    @media (max-width: 567px) {
+        .head h1 {
+            font-size: 20px;
+            border-bottom: 2px solid #2441c2;
+        }
+
+        .head p {
+            color: white;
+        }
+    }
+
+    @media (min-width: 568px) {
+        .head h1 {
+            font-size: 25px;
+            border-bottom: 2px solid #2441c2;
+        }
+
+        .head p {
+            color: white;
+        }
+    }
+
+    @media (min-width: 967px) {
+        .head h1 {
+            font-size: 40px;
+            border-bottom: 2px solid #2441c2;
+        }
+
+        .head p {
+            color: white;
+        }
+    }
+
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+    }
+
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card:hover .card-title {
+        color: #2441c2;
+        font-weight: bold;
+        transform: scale(1.05);
+        transition: all 0.3s ease-in-out;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+/* end projects */
