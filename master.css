@@ -12,7 +12,7 @@
     @media (min-width: 768px) {
         .special-heading h1 {
             font-size: 90px;
-            opacity: 0.4;
+            opacity: 0.3;
             color: #2441c2;
             font-weight: 900;
         }
@@ -310,3 +310,26 @@
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
 /* end projects */
+
+/* start contact */
+    .contact-text {
+        margin-top: 100px;
+    }
+
+    .socials p {
+        border-bottom: 1px solid #2441c2;
+    }
+
+    .socials div a i {
+        font-size: 24px;
+    }
+
+    .socials div a i:hover {
+        padding: 10px;
+        background-color: #2441c2;
+        border-radius: 10px;
+        color: white;
+        font-size: 20px;
+        transition: all 0.3s ease-in-out;
+    }
+/* end contact */
