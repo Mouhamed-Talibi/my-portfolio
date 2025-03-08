@@ -227,7 +227,7 @@ body {
 
 .service:hover {
     background-color: var(--secondary-color);
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .service:hover i {
@@ -240,3 +240,75 @@ body {
     color: var(--third-color);
 }
 /* end services */
+
+/* start skills */
+.progress {
+    height: 25px;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 25px;
+    transition: width 1.5s ease-in-out;
+}
+
+.skill {
+    margin-bottom: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.skill:hover {
+    transform: translateY(-5px);
+}
+
+.progress {
+    height: 25px;
+    background-color: #f1f1f1;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+    background-color: var(--main-color);
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    line-height: 25px;
+    width: 0%;
+    transition: width 1.5s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.skill:hover .progress-bar {
+    background-color: var(--fourth-color);
+    transform: scaleX(1.02);
+}
+
+.skills-content a {
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
+    width: 150px;
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 18px;
+}
+
+.skills-content a:hover {
+    background-color: var(--main-color);
+    color: #f1f1f1;
+    transform: translateY(-5px);
+}
+
+.skills-content h3 {
+    color: var(--third-color);
+    margin-top: 20px;
+}
+
+/* end skills */
