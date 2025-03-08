@@ -16,24 +16,36 @@
     <link rel="stylesheet" href="style/master.css">
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-        const progressBars = document.querySelectorAll(".progress-bar");
-
-        function showProgress() {
-            progressBars.forEach(bar => {
-                const width = bar.getAttribute("data-width");
-                bar.style.width = width;
-            });
-        }
-
-        const section = document.querySelector(".container");
-        const observer = new IntersectionObserver(entries => {
-            if (entries[0].isIntersecting) {
-                showProgress();
+            const progressBars = document.querySelectorAll(".progress-bar");
+            function showProgress() {
+                progressBars.forEach(bar => {
+                    const width = bar.getAttribute("data-width");
+                    bar.style.width = width;
+                });
             }
-        }, { threshold: 0.5 });
+            const section = document.querySelector(".container");
+            const observer = new IntersectionObserver(entries => {
+                if (entries[0].isIntersecting) {
+                    showProgress();
+                }
+            }, { threshold: 0.5 });
+            observer.observe(section);
+        });
 
-        observer.observe(section);
-    });
+        // Reveal Projects on Scroll
+        document.addEventListener("DOMContentLoaded", function () {
+            const projects = document.querySelectorAll(".project");
+            function revealProjects() {
+                projects.forEach((project) => {
+                    const projectTop = project.getBoundingClientRect().top;
+                    if (projectTop < window.innerHeight - 50) {
+                        project.classList.add("show");
+                    }
+                });
+            }
+            window.addEventListener("scroll", revealProjects);
+            revealProjects();
+        });
     </script>
 </head>
 
@@ -68,6 +80,9 @@
                         </li>
                         <li class="nav-item mx-2">
                             <a class="nav-link" href="#skills">Skills</a>
+                        </li>
+                        <li class="nav-item mx-2">
+                            <a class="nav-link" href="#projects">Projects</a>
                         </li>
                         <li class="nav-item mx-2">
                             <a class="nav-link" href="#contact">Contact Me</a>
@@ -220,6 +235,111 @@
     </div>
     <!-- end skills -->
 
+    <!-- Start Projects -->
+    <div class="projects py-5 mt-5" id="projects">
+        <div class="container">
+            <div class="special-heading mb-4">
+                <h1 class="text-center">My Projects</h1>
+                <p class="text-center">Discover My Projects I Have Worked On</p>
+            </div>
+            <!-- Projects Grid -->
+            <div class="projects-content row mt-4 gap-3 p-2 justify-content-center">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="project">
+                        <div class="project-img">
+                            <img src="imgs/projects/mashawi-amar.png" alt="Mashawi Amar" class="img-fluid">
+                        </div>
+                        <h3 class="text-center mt-4">Mashawi Amar</h3>
+                        <p>This is a restaurant management order system that allows customers to have their <strong>own accounts and order their favorite food</strong> anytime.</p>
+                        <a href="http://mashawiamar.zya.me/routes.php?action=home" target="_blank" class="btn">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="project">
+                        <div class="project-img">
+                            <img src="imgs/projects/friend-portfolio.png" alt="My Friend Portfolio" class="img-fluid">
+                        </div>
+                        <h3 class="text-center mt-4">My Friend Portfolio</h3>
+                        <p>This is a simple and well-designed portfolio created by me.</p>
+                        <a href="https://mouhamed-talibi.github.io/Zito-portfolio/" target="_blank" class="btn">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <!-- End Projects -->
+
+    <!-- start contact -->
+    <div class="contact py-5" id="contact">
+        <div class="container">
+            <div class="special-heading">
+                <h1 class="text-center">Contact Me</h1>
+                <p class="text-center">Feel Free To Reach Me Any Time.</p>
+            </div>
+            <!-- contact content -->
+            <div class="contact-content row">
+                <div class="row align-items-center">
+                    <!-- Contact Image -->
+                    <div class="col-md-6 text-center">
+                        <img src="imgs/developer-man.jpg" alt="Contact Image" class="img-fluid rounded">
+                    </div>
+                    <!-- Contact Info -->
+                    <div class="col-md-6">
+                        <p class="lead">
+                            🚀 Let's turn your ideas into reality! I bring expertise, dedication, and innovation to every project. <strong>Hire me today and let’s build something amazing together!</strong>
+                        </p>
+                        <!-- Social Links -->
+                        <div class="social-links d-flex gap-2 mt-3">
+                            <a href="https://www.linkedin.com/in/mohamed-talibi-639902333/" target="_blank" class="btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                            <a href="https://github.com/Mouhamed-Talibi" target="_blank" class="btn"><i class="fab fa-github"></i> GitHub</a>
+                            <a href="https://www.instagram.com/easy.code_/" target="_blank" class="btn"><i class="fab fa-instagram"></i> Instagram</a>
+                            <a href="https://web.facebook.com/mohamed.talibi.5815" target="_blank" class="btn"><i class="fab fa-facebook"></i> Facebook</a>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+        </div>
+    </div>
+    <!-- end contact -->
+
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row text-center text-md-start text-sm-start">
+                <!-- About Section -->
+                <div class="col-md-4 mb-3">
+                    <h4>About Me</h4>
+                    <p>I am Mouhamed Talibi, a passionate developer with expertise in backend development and data entry.</p>
+                </div>
+    
+                <!-- Navigation Links -->
+                <div class="col-md-4 mb-3">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links list-unstyled d-flex justify-content-center justify-content-md-start gap-3">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+    
+                <!-- Social Media Links -->
+                <div class="col-md-4">
+                    <h4>Follow Me</h4>
+                    <div class="social-links d-flex justify-content-center justify-content-md-start gap-3">
+                        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>    
 
     <!-- Bootsrap Js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

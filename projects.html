@@ -14,6 +14,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <!-- Css Link -->
     <link rel="stylesheet" href="style/master.css">
+    <script>
+        // Reveal Projects on Scroll
+        document.addEventListener("DOMContentLoaded", function () {
+            const projects = document.querySelectorAll(".project");
+            function revealProjects() {
+                projects.forEach((project) => {
+                    const projectTop = project.getBoundingClientRect().top;
+                    if (projectTop < window.innerHeight - 50) {
+                        project.classList.add("show");
+                    }
+                });
+            }
+            window.addEventListener("scroll", revealProjects);
+            revealProjects();
+        });
+    </script>
 </head>
 
 <body>
@@ -49,6 +65,9 @@
                             <a class="nav-link" href="skills.html">Skills</a>
                         </li>
                         <li class="nav-item mx-2">
+                            <a class="nav-link" href="projects.html">Projects</a>
+                        </li>
+                        <li class="nav-item mx-2">
                             <a class="nav-link" href="contact.html">Contact Me</a>
                         </li>
                     </ul>
@@ -57,6 +76,44 @@
         </div>
     </nav>
     <!-- End navbar -->
+
+    <!-- Start Projects -->
+    <div class="projects py-5 mt-5" id="projects">
+        <div class="container">
+            <div class="special-heading mb-4">
+                <h1 class="text-center">My Projects</h1>
+                <p class="text-center">Discover My Projects I Have Worked On</p>
+            </div>
+            <!-- Projects Grid -->
+            <div class="projects-content row mt-4 gap-3 p-2 justify-content-center">
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="project">
+                        <div class="project-img">
+                            <img src="imgs/projects/mashawi-amar.png" alt="Mashawi Amar" class="img-fluid">
+                        </div>
+                        <h3 class="text-center mt-4">Mashawi Amar</h3>
+                        <p>This is a restaurant management order system that allows customers to have their <strong>own accounts and order their favorite food</strong> anytime.</p>
+                        <a href="http://mashawiamar.zya.me/routes.php?action=home" target="_blank" class="btn">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="project">
+                        <div class="project-img">
+                            <img src="imgs/projects/friend-portfolio.png" alt="My Friend Portfolio" class="img-fluid">
+                        </div>
+                        <h3 class="text-center mt-4">My Friend Portfolio</h3>
+                        <p>This is a simple and well-designed portfolio created by me.</p>
+                        <a href="https://mouhamed-talibi.github.io/Zito-portfolio/" target="_blank" class="btn">
+                            <i class="fas fa-external-link-alt"></i> Live Demo
+                        </a>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+    <!-- End Projects -->
 
 
     <!-- Bootsrap Js -->
